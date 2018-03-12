@@ -1,0 +1,36 @@
+<ion-menu [content]="content" id="menu-material">
+
+
+
+
+<ion-header class="menu-header">
+        
+        <img class="user-avatar round" src="https://scienceandsociety.duke.edu/wordpress/wp-content/uploads/profile-list-ben-100x100.jpg"/>
+        <p><span>Chen</span></p>
+        <p><span>chenlitchian@gmail.com</span></p>
+      </ion-header>
+
+<ion-content padding style="background-color: black">
+
+<ion-list>
+      
+      <ion-item>
+  <div class="item-content">
+  
+
+      <button ion-item *ngFor="let page of pages" (tap)="openPage(page)">
+            {{page.title}} <ion-icon item-end name ="ios-arrow-forward"></ion-icon>
+        </button>
+
+      </div>
+      <button ion-item (tap)="logout()">Log Out</button>
+      </ion-item>
+</ion-list>
+
+
+
+
+</ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

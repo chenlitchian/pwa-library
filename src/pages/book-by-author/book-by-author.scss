@@ -1,0 +1,25 @@
+page-book-by-author {
+
+.item ion-thumbnail {
+    min-width: 5rem;    
+    min-height: 5rem;
+    img {
+        max-width: 6rem;    
+        min-height: 5rem;
+    }
+}
+
+.booktitle{
+        margin-top: 0!important;
+        font-weight: 900;
+        overflow-wrap: break-word;
+}
+
+.bookauthor{
+    align:right;
+    font-weight: 500;
+    overflow-wrap: break-word;
+}
+
+
+}

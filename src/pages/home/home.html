@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-navbar color="primary" *ngIf="!showSearch">
+
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name ="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+     <ion-buttons right>
+      <button ion-button icon-only (click)="goToSearch()">
+        <ion-icon name ="search"></ion-icon>
+
+      </button>
+
+      <button ion-button icon-only (click)="changeView()">
+        <ion-icon *ngIf = "!grid" name ="apps"></ion-icon>
+        <ion-icon *ngIf = "grid" name ="list"></ion-icon>
+      </button>
+
+       <button ion-button icon-only (click)="goToAuthor()">
+        <ion-icon name ="people"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+    <ion-item>
+
+      <ion-label>Select Category</ion-label>
+      <ion-select [(ngModel)]="category" (ionChange)="onSelectChange($event)" interface="action-sheet" cssClass="cats">
+        <ion-option value="bf">BF</ion-option>
+        <ion-option value="cf">CF</ion-option>
+        <ion-option value="cx">CX</ion-option>
+        <ion-option value="mh">MH</ion-option>
+        <ion-option value="nf">NF</ion-option>
+        <ion-option value="nfe">NFE</ion-option>
+        <ion-option value="qt">QT</ion-option>
+        <ion-option value="xj">XJ</ion-option>
+        <ion-option value="zf">ZF</ion-option>
+        <ion-option value="zz">ZZ</ion-option>
+        <ion-option value="all">ALL</ion-option>
+      </ion-select>
+
+    </ion-item>
+    
+   
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding style="background-color:#212121">
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+   
+    <!-- <ion-list *ngFor="let item of items | async">
+       {{ item.title }}
+    </ion-list>
+   -->
+
+   
+ <ion-grid *ngIf="grid"> 
+   <ion-row wrap ion-list class="zoom" >
+    <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-1 *ngFor="let post of posts" (tap)="openPage(post)">
+       <img src="assets/imgs/samplebook.jpg" width="auto">
+        </ion-col>
+ </ion-row>
+</ion-grid> 
+
+
+<ion-grid *ngIf="!grid"> 
+
+   <ion-row wrap ion-list>
+
+    
+    <ion-col col-sm-12 col-md-6 col-lg-4 col-xl-3 *ngFor="let post of posts">
+
+    <ion-item (click)="openPage(post)">
+     <ion-thumbnail item-start>
+      <!-- <img src="assets/imgs/{{post.category}}/{{post.code}}.jpg"> -->
+      <img src="assets/imgs/samplebook.jpg">
+    </ion-thumbnail>
+    <h2 class="booktitle">{{post.title}}</h2>
+    <h3 class="bookauthor" align="right">{{post.author}}</h3>
+    
+    <!-- <button ion-button clear item-end (click)="openPage(post)">View</button> -->
+  </ion-item>
+
+</ion-col>
+ </ion-row>
+</ion-grid>
+
+
+
+<ion-fab right bottom (click)="scrollToTop()" style="opacity:0.5;">
+ <button ion-fab mini><ion-icon name="ios-arrow-up"></ion-icon></button> 
+</ion-fab>
+
+</ion-content>
+
+
+<!-- 
+ <img src="assets/imgs/{{this.post.category}}/{{this.post.code}}.jpg">  -->
