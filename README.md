@@ -17,6 +17,16 @@ npm install
 ionic serve 
 ```
 
+### Run Build
+
+```
+ionic build -prod
+```
+
+### Then deploy www directory to web server
+
+
+
 ## Built With
 
 * [Ionic 2]- The hybrid app framework used
