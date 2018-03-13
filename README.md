@@ -1,13 +1,13 @@
-### pwa-library
+# pwa-library
 PWA built with Ionic Angular and Firebase
 
 
-###Developing
+## Developing
 
-##First, be sure to install dependencies:
+### First, be sure to install dependencies:
 
-#npm install
+''' npm install '''
 
-##Then start a dev server on localhost:
+### Then start a dev server on localhost:
 
-#ionic serve
+''' ionic serve '''
