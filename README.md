@@ -1,6 +1,7 @@
 # pwa-library
 PWA built with Ionic Angular and Firebase
 
+[Demo](https://sample-32c3d.firebaseapp.com/)
 
 ## Developing
 
