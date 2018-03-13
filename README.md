@@ -15,3 +15,12 @@ npm install
 ```
 ionic serve 
 ```
+
+## Built With
+
+* [Ionic 2]- The hybrid app framework used
+* [Firebase] - Backend
+
+
+## Screenshot
+
