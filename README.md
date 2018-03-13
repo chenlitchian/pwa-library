@@ -6,8 +6,12 @@ PWA built with Ionic Angular and Firebase
 
 ### First, be sure to install dependencies:
 
-' npm install '
+' 
+npm install 
+'
 
 ### Then start a dev server on localhost:
 
-''' ionic serve '''
+''' 
+ionic serve 
+'''
